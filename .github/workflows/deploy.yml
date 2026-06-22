@@ -39,4 +39,4 @@ jobs:
       - name: Output information
         run: |        
           echo "mongodb_username: ${{ env.MONGODB_USERNAME }}" #This will not work because the env variables are not available in this job.
-          echo "mongodb_db_name: ${env.MONGODB_DB_NAME}" #This will work because the env variable is defined in the workflow level.
+          echo "mongodb_db_name: ${{ env.MONGODB_DB_NAME }}" #This will work because the env variable is defined in the workflow level.
