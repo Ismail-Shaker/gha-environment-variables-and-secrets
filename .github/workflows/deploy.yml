@@ -30,7 +30,8 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "mongodb_username: ${{ env.MONGODB_USERNAME }}" #Ignore this error message because this is an echo command not a YAML code to be parsed.
+        run: |
+          echo "mongodb_username: ${{ env.MONGODB_USERNAME }}" #Needs a new line to work otherwise it breaks YAML parsing.
   deploy:
     needs: test
     runs-on: ubuntu-latest
